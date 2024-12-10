@@ -39,12 +39,12 @@
 
 // FOOTER UL
 .custom-list {
-  @apply list-none cursor-pointer leading-[1.325] tracking-[0.36px] text-[#657E7E] flex flex-col gap-[6px];
+  @apply list-none leading-[1.325] tracking-[0.36px] text-[#657E7E] flex flex-col gap-[6px];
 }
 
 // FOOTER LI
 .li-hover {
-  @apply hover:text-[#B1C9C8] hover:underline transition duration-300;
+  @apply hover:text-[#B1C9C8] hover:underline transition duration-300 w-fit cursor-pointer;
 }
 
 // NEWS-EVENT BUTTONS
