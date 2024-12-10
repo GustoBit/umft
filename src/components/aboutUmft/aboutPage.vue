@@ -29,6 +29,8 @@
       </div>
     </section>
   </div>
+
+  <licencesFooter />
 </template>
 <script setup>
 import aboutVideo from './aboutVideo.vue'
@@ -36,4 +38,6 @@ import aboutOfficer from './aboutOfficer.vue'
 import aboutGoals from './aboutGoals.vue'
 import submitApp from '@/assets/helpers/submit/submitApp.vue'
 import aboutLife from './aboutLife.vue'
+
+import licencesFooter from '@/views/optionFooter/licencesFooter.vue'
 </script>

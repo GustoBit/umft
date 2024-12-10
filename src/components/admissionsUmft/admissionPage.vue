@@ -14,9 +14,13 @@
       </div>
     </section>
   </div>
+
+  <licencesFooter />
 </template>
 <script setup>
 import topMain from './topMain.vue'
 import imageMain from './imageMain.vue'
 import infoAddmission from './infoAddmission.vue'
+
+import licencesFooter from '@/views/optionFooter/licencesFooter.vue'
 </script>

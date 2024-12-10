@@ -312,5 +312,9 @@
       </main>
     </section>
   </div>
+
+  <footerPage />
 </template>
-<script setup></script>
+<script setup>
+import footerPage from '@/views/mainFooter/footerPage.vue'
+</script>

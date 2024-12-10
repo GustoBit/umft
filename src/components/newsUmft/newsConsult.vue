@@ -46,7 +46,7 @@
           class="relative p-[2px] rounded-[20px] bg-gradient-to-r from-[#FFBA27] to-[#FFE3A7] self-end transition-all duration-300 ease-in-out"
         >
           <button
-            class="rounded-[18px] bg-cGreen py-[7px] px-[16px] hover:bg-gradient-to-r hover:from-[#FFBA27] hover:to-[#FFE3A7] transition duration-300"
+            class="rounded-[18px] transition-all duration-300 bg-cGreen py-[7px] px-[16px] hover:bg-gradient-to-r hover:from-[#FFBA27] hover:to-[#FFE3A7]"
           >
             <span class="text-gradient custom-text sofiaLight">Get consultation</span>
           </button>

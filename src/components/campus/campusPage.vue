@@ -44,7 +44,11 @@
       </div>
     </div>
   </div>
+
+  <footerPage />
 </template>
 <script setup>
 import contentCampus from './contentCampus.vue'
+
+import footerPage from '@/views/mainFooter/footerPage.vue'
 </script>

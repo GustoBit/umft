@@ -39,42 +39,41 @@
 
       <div class="grid grid-cols-[auto_324px] gap-10 2xl:gap-6 xl:grid-cols-1 sm:relative">
         <!-- SM qimsdagi buttons ni bari -->
-        <div class="hidden text-cGreen sm:block absolute top-4 right-0 z-50" @click="option">
-          <Bars3CenterLeftIcon class="size-8" v-if="!missionInfo" />
-          <XMarkIcon class="size-8 text-cGray" v-else />
+        <div class="hidden text-cGreen sm:block absolute top-4 right-0 z-50" @click="show = true">
+          <Bars3CenterLeftIcon class="size-8" />
         </div>
 
         <!-- SM qism BUTTONS -->
-        <div
-          class="h-fit w-full absolute mt-4 bg-cTextGreen transition-all duration-700 ease-in-out p-3 rounded-xl transform hidden sm:block"
-          :class="missionInfo ? 'right-0' : '-right-[120%]'"
-        >
-          <div
-            v-for="(button, index) in buttons"
-            :key="index"
-            class="custom-text text-cGreen text-xl flex flex-col gap-4"
-          >
-            <div class="custom-text text-cGray text-xl cursor-pointer" @click="toggle(index)">
-              {{ button.title }}
-            </div>
-
+        <asideAdmission :show="show" @asideClose="show = false">
+          <div class="p-3 w-full mt-32 overflow-y-auto">
             <div
-              class="overflow-hidden transition-all duration-500 ease-in-out"
-              :style="{ maxHeight: button.show ? button.contentHeight + 'px' : '0px' }"
-              ref="(el) => contentRefs[index] = el"
+              v-for="(button, index) in buttons"
+              :key="index"
+              :class="!button.show ? 'divide-y-2 divide-cGray' : ''"
+              class="custom-text text-white text-lg flex flex-col gap-2 buttonInfo"
             >
-              <div class="flex flex-col gap-1 pl-2 divide-y-2 divide-cGray">
-                <div v-for="(text, i) in button.text" :key="i" class="miniButtonInfo">
-                  <div
-                    class="custom-text text-cGray cursor-pointer rounded-[10px] py-[10px] hover:bg-[#DCE0E0] hover:pl-4 transition-all duration-500"
-                  >
-                    {{ text }}
+              <div class="custom-text cursor-pointer text-lg" @click="phoneToggle(index)">
+                {{ button.title }}
+              </div>
+
+              <div
+                class="overflow-hidden transition-all duration-500 ease-in-out"
+                :style="{ maxHeight: button.show ? button.contentHeight + 'px' : '0px' }"
+                ref="phoneContentRefs"
+              >
+                <div class="flex flex-col gap-1 pl-5 divide-y-2 divide-cGray/10 lg:pl-3">
+                  <div v-for="(text, i) in button.text" :key="i" class="miniButtonInfo">
+                    <div
+                      class="custom-text text-white cursor-pointer text-lg rounded-[10px] py-[10px] hover:bg-[#DCE0E0] hover:pl-4 transition-all duration-500 lg:text-base"
+                    >
+                      {{ text }}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </asideAdmission>
 
         <div class="pt-[50px] 2xl:pt-10 xl:pt-8 lg:pt-6 sm:pt-4">
           <div class="flex flex-col gap-10 lg:gap-6">
@@ -99,14 +98,24 @@
                 >
                   <thead>
                     <tr class="custom-text text-cGreen lg:text-sm sm:text-xs">
-                      <th class="py-6 px-4 border border-gray-300 text-left lg:py-4 lg:px-2 sm:p-1 sm:text-center">№</th>
-                      <th class="py-6 px-4 border border-gray-300 text-left lg:py-4 lg:px-2 sm:py-[4px] sm:px-[6px]">
+                      <th
+                        class="py-6 px-4 border border-gray-300 text-left lg:py-4 lg:px-2 sm:p-1 sm:text-center"
+                      >
+                        №
+                      </th>
+                      <th
+                        class="py-6 px-4 border border-gray-300 text-left lg:py-4 lg:px-2 sm:py-[4px] sm:px-[6px]"
+                      >
                         Academic Program
                       </th>
-                      <th class="py-6 px-4 border border-gray-300 text-left lg:py-4 lg:px-2 sm:py-[4px] sm:px-[6px]">
+                      <th
+                        class="py-6 px-4 border border-gray-300 text-left lg:py-4 lg:px-2 sm:py-[4px] sm:px-[6px]"
+                      >
                         Main Subject
                       </th>
-                      <th class="py-6 px-4 border border-gray-300 text-left lg:py-4 lg:px-2 sm:py-[4px] sm:px-[6px]">
+                      <th
+                        class="py-6 px-4 border border-gray-300 text-left lg:py-4 lg:px-2 sm:py-[4px] sm:px-[6px]"
+                      >
                         Additional Subject
                       </th>
                     </tr>
@@ -117,16 +126,24 @@
                       :key="prog.id"
                       class="sofiaLight custom-text text-[#657E7E] lg:text-sm lg:py-4 lg:px-2 sm:text-[10px]"
                     >
-                      <td class="py-4 px-6 border border-gray-300 text-cGreen lg:py-2 lg:px-3 sm:p-1 sm:text-center">
+                      <td
+                        class="py-4 px-6 border border-gray-300 text-cGreen lg:py-2 lg:px-3 sm:p-1 sm:text-center"
+                      >
                         {{ i + 1 }}
                       </td>
-                      <td class="py-4 px-6 border border-gray-300 lg:py-2 lg:px-3 sm:py-[4px] sm:px-[6px]">
+                      <td
+                        class="py-4 px-6 border border-gray-300 lg:py-2 lg:px-3 sm:py-[4px] sm:px-[6px]"
+                      >
                         {{ prog.program }}
                       </td>
-                      <td class="py-4 px-6 border border-gray-300 lg:py-2 lg:px-3 sm:py-[4px] sm:px-[6px]">
+                      <td
+                        class="py-4 px-6 border border-gray-300 lg:py-2 lg:px-3 sm:py-[4px] sm:px-[6px]"
+                      >
                         {{ prog.main }}
                       </td>
-                      <td class="py-4 px-6 border border-gray-300 lg:py-2 lg:px-3 sm:py-[4px] sm:px-[6px]">
+                      <td
+                        class="py-4 px-6 border border-gray-300 lg:py-2 lg:px-3 sm:py-[4px] sm:px-[6px]"
+                      >
                         {{ prog.additional }}
                       </td>
                     </tr>
@@ -153,7 +170,7 @@
               </ul>
 
               <div
-                class="flex flex-col gap-5 sofiaLight custom-text text-[#556666] text-xl mt-6 xl:text-lg xl:gap-3 lg:text-base sm:text-sm sm:gap-1 sm:mt-2"  
+                class="flex flex-col gap-5 sofiaLight custom-text text-[#556666] text-xl mt-6 xl:text-lg xl:gap-3 lg:text-base sm:text-sm sm:gap-1 sm:mt-2"
                 v-if="info.firstReminder || info.secondReminder"
               >
                 <div class="" v-if="info.firstReminder">
@@ -231,14 +248,30 @@ const buttons = ref([
 ])
 
 const contentRefs = ref([])
+const phoneContentRefs = ref([])
 
 const toggle = async (index) => {
   const btn = buttons.value[index]
   btn.show = !btn.show
+  console.log(btn)
 
   if (btn.show) {
     await nextTick()
     const content = contentRefs.value[index]
+    btn.contentHeight = content.scrollHeight
+  } else {
+    btn.contentHeight = 0
+  }
+}
+
+const phoneToggle = async (index) => {
+  const btn = buttons.value[index]
+  btn.show = !btn.show
+  console.log(btn)
+
+  if (btn.show) {
+    await nextTick()
+    const content = phoneContentRefs.value[index]
     btn.contentHeight = content.scrollHeight
   } else {
     btn.contentHeight = 0
@@ -390,12 +423,9 @@ const readMore = ref([
   },
 ])
 
-const missionInfo = ref(false)
+const show = ref(false)
 
-const option = () => {
-  missionInfo.value = !missionInfo.value
-  console.log(missionInfo.value)
-}
+import { Bars3CenterLeftIcon } from '@heroicons/vue/24/outline'
 
-import { Bars3CenterLeftIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+import asideAdmission from '@/support/asideAdmission.vue'
 </script>

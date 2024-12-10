@@ -63,6 +63,8 @@
       <lessonDetails />
     </div>
   </div>
+
+  <footerPage />
 </template>
 <script setup>
 import levelStudy from './levelStudy.vue'
@@ -70,4 +72,6 @@ import teacherDetail from './teacherDetail.vue'
 import studyDetails from './studyDetails.vue'
 import submitApp from '@/assets/helpers/submit/submitApp.vue'
 import lessonDetails from '../../assets/helpers/lesson/lessonDetails.vue'
+
+import footerPage from '@/views/mainFooter/footerPage.vue'
 </script>

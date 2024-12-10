@@ -23,10 +23,12 @@
       </div>
 
       <div class="">
-        <partnersPage />
+        <partnersList />
       </div>
     </section>
   </div>
+
+  <licencesFooter />
 </template>
 <script setup>
 import landingTopMain from './landingTopMain.vue'
@@ -34,5 +36,7 @@ import landingImageMain from './mainView/landingImageMain.vue'
 import landingStudy from './landingStudy.vue'
 import landingProgram from './landingProgram.vue'
 import landingNewsEvents from './landingNewsEvents.vue'
-import partnersPage from '../partners/partnersPage.vue'
+import partnersList from '../partners/partnersList.vue'
+
+import licencesFooter from '@/views/optionFooter/licencesFooter.vue'
 </script>

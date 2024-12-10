@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-cGreen py-[26px] pr-[51px] pl-[40px] 2xl:py-[20px] 2xl:px-[30px] sm:p-[30px]">
+  <footer class="bg-cGreen py-[26px] 2xl:py-[20px] 2xl:px-[30px] md:px-5 sm:p-[30px]">
     <div class="custom-container">
       <div class="flex items-center justify-between sm:flex-col sm:gap-5 sm:items-start">
         <router-link
@@ -16,7 +16,7 @@
 
       <div class="bg-[#173C3C] w-full h-[2px] mt-[26px]"></div>
 
-      <navFooter />
+      <navLincences />
 
       <div class="bg-[#173C3C] w-full h-[2px] my-[26px]"></div>
       <div class="flex items-start gap-[3px] sofiaLight text-[#657E7E] leading-[1.5] select-none">
@@ -27,7 +27,7 @@
   </footer>
 </template>
 <script setup>
-import navFooter from './navFooter.vue'
+import navLincences from '../mainFooter/navLincences.vue'
 import navLinks from '@/assets/helpers/navLinks/navLinks.vue'
 
 import { scrollTop } from '@/helpers/func'

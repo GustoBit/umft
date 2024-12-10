@@ -1,6 +1,6 @@
 <template>
   <div class="flex 2xl:justify-between xl:grid grid-cols-2 sm:grid-cols-1">
-    <div class="flex flex-col gap-[10px] pt-[26px] sm:pl-[20%]">
+    <div class="flex flex-col gap-[10px] pt-[26px]">
       <h1 class="sofiaSemibold custom-text text-xl text-[#B1C9C8]">Quick links</h1>
       <ul class="custom-list">
         <li class="li-hover">Jobs and Vacancies</li>
@@ -9,17 +9,23 @@
         <li class="li-hover">Faculties</li>
         <li class="li-hover">Departments</li>
         <li class="li-hover">For researchers</li>
-        <li class="li-hover">Admissions</li>
+        <li class="li-hover">
+          <router-link :to="{ name: 'admission' }" @click="scrollTop"> Admissions </router-link>
+        </li>
       </ul>
     </div>
 
     <div class="h-[240px] w-[1px] bg-[#173C3C] ml-[179px] 2xl:ml-0 xl:hidden"></div>
 
-    <div class="flex flex-col gap-[10px] pt-[26px] ml-[26px] 2xl:ml-0 sm:pl-[20%]">
+    <div class="flex flex-col gap-[10px] pt-[26px] ml-[26px] 2xl:ml-0">
       <h1 class="sofiaSemibold custom-text text-xl text-[#B1C9C8]">About University</h1>
       <ul class="custom-list">
-        <li class="li-hover">About us</li>
-        <li class="li-hover">Campus life</li>
+        <li class="li-hover">
+          <router-link :to="{ name: 'about' }" @click="scrollTop"> About us </router-link>
+        </li>
+        <li class="li-hover">
+          <router-link :to="{ name: 'campus-life' }" @click="scrollTop"> Campus life </router-link>
+        </li>
         <li class="li-hover">Organizational structure</li>
         <li class="li-hover">Grants</li>
         <li class="li-hover">Gallery</li>
@@ -29,7 +35,7 @@
 
     <div class="h-[240px] w-[1px] bg-[#173C3C] ml-[140px] 2xl:ml-0 xl:hidden"></div>
 
-    <div class="flex flex-col gap-[10px] pt-[26px] ml-[26px] 2xl:ml-0 sm:pl-[20%]">
+    <div class="flex flex-col gap-[10px] pt-[26px] ml-[26px] 2xl:ml-0">
       <h1 class="sofiaSemibold custom-text text-xl text-[#B1C9C8]">Information for</h1>
       <ul class="custom-list">
         <li class="li-hover">Undergraduates</li>
@@ -43,7 +49,7 @@
 
     <div class="h-[240px] w-[1px] bg-[#173C3C] ml-[92px] 2xl:ml-0 xl:hidden"></div>
 
-    <div class="flex flex-col gap-[10px] pt-[26px] ml-[26px] 2xl:ml-0 sm:pl-[20%]">
+    <div class="flex flex-col gap-[10px] pt-[26px] ml-[26px] 2xl:ml-0">
       <h1 class="sofiaSemibold custom-text text-xl text-[#B1C9C8]">Contact information</h1>
       <ul class="custom-list">
         <li class="li-hover flex items-center gap-[5px]">
@@ -68,4 +74,6 @@
 </template>
 <script setup>
 import { MapPinIcon, EnvelopeIcon, PhoneIcon } from '@heroicons/vue/24/outline'
+
+import { scrollTop } from '@/helpers/func'
 </script>

@@ -55,7 +55,7 @@
           </div>
 
           <div class="flex gap-[19px] pr-6 mt-auto lg:flex-col lg:m-0 lg:pt-5 sm:px-5 sm:gap-2">
-            <span class="overflow-hidden rounded-[10px] block 2xl:flex-1 lg:flex-none">
+            <span class="overflow-hidden rounded-[10px] block 2xl:flex-1 lg:flex-none h-fit">
               <img src="@/assets/img/professorWoman.jpg" alt="" class="w-full object-cover" />
             </span>
             <div class="flex-1">

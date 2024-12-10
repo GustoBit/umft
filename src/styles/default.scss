@@ -1,0 +1,112 @@
+.custom-container {
+  @apply container mx-auto max-w-[1360px];
+}
+
+.custom-text {
+  @apply leading-[1.325] tracking-[0.36px];
+}
+
+// MAKE RESPONSIVE
+.custom-responsive {
+  @apply 2xl:px-5 sm:p-2;
+}
+
+.responsiveMt70 {
+  @apply 2xl:mt-[60px] xl:mt-10 lg:mt-8 sm:mt-6 mt-[70px];
+}
+
+.responsiveMb70 {
+  @apply 2xl:mb-[60px] xl:mb-10 lg:mb-8 sm:mb-6 mb-[70px];
+}
+
+.h1With48PxGreen {
+  @apply ahellya leading-[1.325] tracking-[0.36px] text-[48px] text-cGreen pb-[10px] border-b-[2px] border-[#D2DBDB] mb-[26px] xl:text-[40px] lg:text-[32px] sm:text-2xl xl:mb-5 md:mb-4;
+}
+
+.h1With48PxWhite {
+  @apply ahellya leading-[1.325] tracking-[0.36px] text-[48px] text-[#EEEEEE] pb-[10px] border-b-[2px] border-[#D2DBDB] mb-[26px] xl:text-[40px] lg:text-[32px] sm:text-2xl xl:mb-5 md:mb-4;
+}
+
+// TITLE TO-PAGES
+.h1Title48 {
+  @apply ahellya leading-[1.325] tracking-[0.36px] text-[48px] text-cGreen pb-[10px] border-b-[2px] border-[#D2DBDB] xl:text-[40px] lg:text-[32px] sm:text-2xl;
+}
+
+// BOX-SHADOW
+.boxShadow {
+  @apply shadow-[0_4px_4px_0_rgba(0,0,0,0.25)];
+}
+
+// FOOTER UL
+.custom-list {
+  @apply list-none cursor-pointer leading-[1.325] tracking-[0.36px] text-[#657E7E] flex flex-col gap-[6px];
+}
+
+// FOOTER LI
+.li-hover {
+  @apply hover:text-[#B1C9C8] hover:underline transition duration-300;
+}
+
+// NEWS-EVENT BUTTONS
+.category-oldButton {
+  @apply py-[3px] px-[10px] ring-1 ring-inset ring-[#657E7E] rounded-[90px] overflow-hidden text-[#657E7E] hover:ring-cGreen hover:text-cGreen text-[12px] lg:text-[10px];
+}
+
+// LINKS-HOVER TG,INSTA
+.link-hover {
+  @apply flex items-center justify-center size-[34px] rounded-full overflow-hidden ring-1 ring-[#CFD7D7] hover:bg-white/20 transition duration-300;
+}
+
+// PARTNERS-LOGO
+.partners-logo {
+  @apply flex items-center gap-[10px] sofiaMedium leading-[1.5] text-[#494949] hover:bg-cGreen transition duration-300;
+}
+
+/* LESSON DETAILS */
+.fatherElement {
+  @apply rounded-[20px] bg-[#EEEEEE] ring-1 ring-inset ring-[#89A7A6] p-4 hover:bg-cGreen transition duration-500 hover:scale-105 flex flex-col;
+}
+
+.mainTitle {
+  @apply text-[26px] custom-text text-cGreen group-hover:text-[#E8E8E8] 2xl:text-xl xl:text-lg sm:text-base;
+}
+
+.mainTimeElements {
+  @apply mt-[64px] mb-[52px] flex justify-between text-cGreen sofiaLight custom-text group-hover:text-[#E8E8E8] 2xl:my-10 xl:my-6 sm:flex-col sm:gap-3 sm:my-4;
+}
+
+.partAndPart {
+  @apply sofiaMedium text-[36px] group-hover:text-cYellow 2xl:text-2xl xl:text-lg sm:text-base;
+}
+
+.paraghraphOfTime {
+  @apply sofiaLight text-base group-hover:text-[#E8E8E8] xl:text-sm xl:text-xs;
+}
+
+.buttonApply {
+  @apply py-2 px-9 rounded-[30px] bg-cGreen text-xl custom-text text-[#EEEEEE] group-hover:bg-cYellow group-hover:text-cGreen 2xl:py-1 2xl:text-lg xl:text-base xl:px-6 sm:text-xs sm:px-4;
+}
+
+.aHrefNext {
+  @apply ring-1 ring-cGreen rounded-full flex items-center justify-center size-[45px] text-cGreen group-hover:text-cYellow group-hover:ring-cYellow 2xl:size-9 xl:size-7 sm:size-5;
+}
+
+.showMoreButton {
+  @apply py-2 px-5 rounded-[90px] bg-[#E0E1E5] flex items-center gap-3 sofiaLight text-lg text-cGreen leading-[1.5] hover:bg-cGreen transition duration-300 hover:text-[#EEEEEE] xl:text-base;
+}
+
+// NEWS-CONSULT TO BUTTON GRADIENT
+.text-gradient {
+  background: linear-gradient(to right, #ffba27, #ffe3a7);
+  -webkit-background-clip: text;
+  color: transparent;
+  transition:
+    color 0.5s ease-in-out,
+    background 0.5s ease-in-out;
+}
+
+button:hover .text-gradient {
+  color: transparent;
+  background: linear-gradient(to right, #022726, #173c3c);
+  -webkit-background-clip: text;
+}

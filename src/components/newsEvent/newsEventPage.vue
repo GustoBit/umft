@@ -11,9 +11,13 @@
       <submitApp />
     </section>
   </div>
+
+  <footerPage />
 </template>
 <script setup>
 import newsImg from './newsEventImg.vue'
 import studentTeam from './newsEventStudentTeam.vue'
 import submitApp from '@/assets/helpers/submit/submitApp.vue'
+
+import footerPage from '@/views/mainFooter/footerPage.vue'
 </script>
